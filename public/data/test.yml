@@ -1,0 +1,10 @@
+categories:
+- greetings
+conversations:
+- - hello there
+  - hi
+- - what is your name
+  - I don't have a name
+  - I don't know
+- - what are you doing
+  - nothing
