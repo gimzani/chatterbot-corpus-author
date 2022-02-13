@@ -18,11 +18,11 @@ export default {
   },
   methods: {
     loadCategories() {
-      let categories = this.corpus.categories.join('\r\n');
+      let categories = this.corpus.categories.join(/\r*\n/);
       this.categories = categories;
     },
     saveCategories(evt) {
-      let categories = evt.target.value.split('\r\n');
+      let categories = evt.target.value.split(/\r*\n/);
       this.$emit('save-categories', categories);
     }
   }

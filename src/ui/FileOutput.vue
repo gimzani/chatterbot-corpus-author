@@ -62,7 +62,7 @@ export default {
     padding: 5px;
     border: solid 1px rgba(0,0,0,0.4);
     overflow-y: auto;
-    max-height: 80vh;
+    max-height: calc(100vh - 100px);
     font-family:'Courier New', Courier, monospace;
 
     section {

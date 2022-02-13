@@ -22,7 +22,7 @@ export default {
   },
   methods: {
     parseResponses() {
-      return this.responses.split('\n').filter(r => r.length>0).map(r => r.trim());
+      return this.responses.split(/\r*\n/).filter(r => r.length>0).map(r => r.trim());
     },
     renderResponses(responses) {
       let text = '';
@@ -52,7 +52,7 @@ export default {
   </div>
   <div>
     <label>Responses:</label>
-    <textarea rows="4" v-model="responses"></textarea>
+    <textarea rows="8" v-model="responses"></textarea>
   </div>
   <div class="button-area">
     <button @click="saveNode">Save</button>
