@@ -1,6 +1,8 @@
 <script>
 //--------------------------------------
 import * as fileIo from '../code/fileIo'
+import CorpusFile from '../code/CorpusFile'
+import swal from 'sweetalert'
 //--------------------------------------
 export default {
   name: "MenuBar",
@@ -8,6 +10,24 @@ export default {
     corpus: Object
   },
   methods: {
+    async newFile() {
+      let fileName = await swal({
+        text: 'File Name:',
+        content: "input",
+        button: {
+          text: "Save",
+          closeModal: true,
+        },
+      })
+
+      let corpus = new CorpusFile({
+        fileName: `${fileName}.yml`,
+        categories: [],
+        conversations: []
+      })
+
+      this.$emit('file-load', corpus);
+    },
     async loadFile(evt) {
       const fileList = evt.target.files;
       for (const file of fileList) {
@@ -26,9 +46,10 @@ export default {
 <template>
 <div class="menu-bar">
   <div class="brand">
-    Corpus Editor
+    Corpus Editor <span v-if="corpus">- ({{corpus.fileName}})</span>
   </div>
   <div class="buttons">
+    <button @click="newFile">New</button>
     <button @click="saveFile">save</button>
     <button @click="$refs.fileselect.click()">Load</button>
     <input type="file" ref="fileselect" @change="loadFile" style="display:none">
