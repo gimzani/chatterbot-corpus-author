@@ -1,7 +1,36 @@
-# Vue 3 + Vite
+# Chatterbot Corpus Author
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Just a tool I whipped up to make authoring bot-yml files.
 
-## Recommended IDE Setup
+It's meant to run locally, load files from a folder and download them to your downloads folder.  
 
-- [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
+This is not a product - it's just a toy, a tool, an idea.
+
+Feel free to use it freely.
+
+## Tech Involved
+* Vue 3
+* Sass
+
+## To Use
+
+First install packages:
+```
+npm i
+```
+
+Then run it in dev mode with:
+```
+npm run dev
+```
+
+Build it into a dist folder with 
+```
+npm run build
+```
+
+You can preview the build folder with 
+```
+npm run preview
+```
+
